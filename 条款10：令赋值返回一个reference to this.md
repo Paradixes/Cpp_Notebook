@@ -1,4 +1,4 @@
-## 条款10：令operator= 返回一个reference to *this
+## 条款10：令赋值返回一个reference to *this
 
 ### 一、赋值的连锁形式
 
