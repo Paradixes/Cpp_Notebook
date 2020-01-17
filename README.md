@@ -17,7 +17,7 @@
 
 ### [条款09：不在析构和构造函数中调用virtual函数](条款09：不在析构和构造函数中调用virtual函数.md)
 
-### [条款10：令赋值操作返回一个reference_to_*this](条款10：令赋值操作返回一个reference_to_this.md)
+### [条款10：令赋值操作返回一个reference to *this](条款10：令赋值操作返回一个reference_to_this.md)
 
 
 
