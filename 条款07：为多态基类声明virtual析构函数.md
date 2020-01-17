@@ -51,6 +51,10 @@ virtual ~TimeKeeper();
 
 **将实体class（不带有pure virtual的class）抽象化**
 
+
+
+### 2. 实现
+
 ```C++
 class AWOV {
 public:

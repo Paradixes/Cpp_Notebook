@@ -39,7 +39,7 @@ std::vector<int>::const_iterator citer = vec.begin();	//citer与const T*作用�
 
 ### 3. 成员函数
 
-### (1) 具体实现
+#### (1) 具体实现
 
 头文件
 
@@ -67,16 +67,16 @@ ctb[0] = 'x';							//无法改写const TextBlock
 
 
 
-### (2) 两种const概念
+#### (2) 两种const概念
 
-####  a. bitwise const
+#####  a. bitwise const
 
 **定义：不改变对象内任何一个bit**
 
 ```C++
 class CTextBlock{
 public:
-    ···
+    ...
     char& operator[](std::size_t position) const //bitwise const声明
     { return pText[position]; }
 private:
@@ -94,7 +94,7 @@ char* pc = &cctb[0];					//调用const operator[]取得指针
 
 ---
 
-#### b. logical const
+##### b. logical const
 
 **定义：可以改变内部一些bits，但只有在客户端检测不出的情况下可以允许**
 
@@ -103,7 +103,7 @@ char* pc = &cctb[0];					//调用const operator[]取得指针
 ```C++
 class CTextBlock{
 public:
-    ···
+    ...
     std::size_t length() const;
 private:
     char* pTest;
@@ -130,14 +130,14 @@ mutable bool lengthIsValid;				//始终可以被修改
 
 
 
-### (3)const和non-const的转化（转型casting）
+#### (3)const和non-const的转化（转型casting）
 
 ```c++
 class TextBlock{
-    ···
+    ...
     const char& operator[](std::size_t position) const
     {
-        ···
+        ...
         return text[position];
     }
     char& operator[](std::size_t position)				//调用const op[]，得到non-const
