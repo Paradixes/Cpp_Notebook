@@ -1,11 +1,11 @@
-## 条款03：const的使用
+## 条款03：`const`的使用
 
-### 一、 const的作用
+### 一、 `const`的作用
 
 1. 告诉程序员该值应该保持不变，便于程序员理解代码
 2. 告诉编译器该值应该保持不变，便于编译器识别错误
 
-### 二、 const的用法
+### 二、 `const`的用法
 
 ### 1. 修饰指针
 
@@ -18,7 +18,7 @@ char* const p = greeting;			//const指针，non-const对象
 const char* const p = greeting;		//const指针，const对象
 ```
 
-**PS: *const char\* p*与*char const \* p* 含义一致**
+**PS: `const char* p`与`char const * p` 含义一致**
 
 
 
@@ -67,9 +67,9 @@ ctb[0] = 'x';							//无法改写const TextBlock
 
 
 
-#### (2) 两种const概念
+#### (2) 两种`const`概念
 
-#####  a. bitwise const
+#####  a. bitwise `const`
 
 **定义：不改变对象内任何一个bit**
 
@@ -84,7 +84,7 @@ private:
 }
 ```
 
-**出现的矛盾（此时为logical const）**
+**出现的矛盾（此时为logical `const`）**
 
 ```C++
 const CTextBlock cctb("Hello");			//声明常量对象
@@ -94,11 +94,11 @@ char* pc = &cctb[0];					//调用const operator[]取得指针
 
 ---
 
-##### b. logical const
+##### b. logical `const`
 
 **定义：可以改变内部一些bits，但只有在客户端检测不出的情况下可以允许**
 
-**出现的矛盾（此时为bitwise const）**
+**出现的矛盾（此时为bitwise `const`）**
 
 ```C++
 class CTextBlock{
@@ -130,7 +130,7 @@ mutable bool lengthIsValid;				//始终可以被修改
 
 
 
-#### (3)const和non-const的转化（转型casting）
+#### (3) `const`和`non-const`的转化（转型casting）
 
 ```c++
 class TextBlock{

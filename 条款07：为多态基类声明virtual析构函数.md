@@ -16,7 +16,7 @@ class WaterClock: public TimeKeeper { ... };
 class WristWatch: public TimeKeeper { ... };
 ```
 
-**当在派生类中使用delete时，会调用基类的析构函数，导致派生类中的数据未被删除**
+**当在派生类中使用`delete`时，会调用基类的析构函数，导致派生类中的数据未被删除**
 
 ```C++
 TimeKeeper* ptk = getTimeKeeper();			//从TimeKeeper继承体系
@@ -74,4 +74,4 @@ AWOV::~AWOV() { }				//定义
 
 #### 1. 多态用途
 
-#### 2. 通过base classes接口处理derived class对象（例：TimeKeeper）
+#### 2. 通过base classes接口处理derived class对象（例：`TimeKeeper`）
