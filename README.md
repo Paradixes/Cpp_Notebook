@@ -51,3 +51,6 @@
 ### [条款18：让接口被正确使用](4.设计与声明/条款18：让接口被正确使用.md)
 
 ### [条款19：像设计type一样设计class](4.设计与声明/条款19：像设计type一样设计class.md)
+
+### [条款20：宁以pass-by-reference-to-const替换pass-by-value](4.设计与声明/条款20：宁以pass-by-reference-to-const替换pass-by-value.md)
+
