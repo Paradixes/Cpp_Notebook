@@ -49,3 +49,7 @@ copy构造函数是用来定义pass-by-value该如何实现
 #### 11. 新type的一般化程度
 
 若你想定义一个types大家族，则应该用class template替代class
+
+#### 12. 新type的必要性
+
+若只是想定义新的derived class为已有class添加机能，则还不如定义几个non-member函数或templates
