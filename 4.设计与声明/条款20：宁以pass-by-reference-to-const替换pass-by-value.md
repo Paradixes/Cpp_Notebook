@@ -1,6 +1,6 @@
-## 条款20：宁以pass-by-reference-to-const替换pass-by -value
+## 条款20：宁以$pass-by-reference-to-const$替换$pass-by-value$
 
-### class及其继承体系
+### $class$及其继承体系
 
 ```C++
 class Person {
@@ -22,7 +22,7 @@ private:
 };
 ```
 
-### 一、 pass-by-value
+### 一、 $pass-by-value$
 
 ### 1. 调用
 
@@ -49,7 +49,7 @@ graph LR
 
 
 
-### 二、 pass-by-reference-to-const
+### 二、 $pass-by-reference-to-const$
 
 ### 1. 调用
 
@@ -59,15 +59,15 @@ bool validateStudent(const Student& s);
 
 **不会创建任何新对象，因而也不会调用构造函数和析构函数**
 
-**PS: 由于以by reference方式传递，要保证调用者不会改变传入的`Student`值，`const`是必要的**
+**PS: 由于以$by\ reference$方式传递，要保证调用者不会改变传入的`Student`值，`const`是必要的**
 
 
 
 ### 2. 避免的对象切割的问题
 
-**derived class被视为base class传入时，会仅留下base class对象**
+**$derived\ class$被视为$base\ class$传入时，会仅留下$base\ class$对象**
 
-derived class和base class：
+$derived\ class$和$base\ class$：
 
 ```C++
 class Window {
@@ -102,7 +102,7 @@ WindowWithScrollBars wwsb;
 printNameAndDisplay(wwsb);
 ```
 
-**参数`wwsb`会被构造成`Window`对象，因为它是pass by value，传入过程中会调用base class的构造函数**
+**参数`wwsb`会被构造成`Window`对象，因为它是$pass\ by\ value$，传入过程中会调用$base\ class$的构造函数**
 
 
 
@@ -118,11 +118,11 @@ void printNameAndDisplay(const Window& w)
 
 
 
-### 三、 pass-by-reference-to-const和pass-by-value的选择
+### 三、 $pass-by-reference-to-const$和$pass-by-value$的选择
 
-1. pass-by-value比较适合内置类型（包括STL的迭代器和函数对象）
+1. $pass-by-value$比较适合内置类型（包括$STL$的迭代器和函数对象）
 
-2. 小型types不必然是pass-by-value的优良选择
+2. 小型$types$不必然是$pass-by-value$的优良选择
 
 > (1) 对象小并不意味着复制成本不高
 
@@ -130,4 +130,4 @@ void printNameAndDisplay(const Window& w)
 
 > (3) 作为用户自定义类型，大小容易发生改变
 
-3. **除了内置类型，尽可能以pass-by-reference-to-const替换pass-by-value**
+3. **除了内置类型，尽可能以$pass-by-reference-to-const$替换$pass-by-value$**

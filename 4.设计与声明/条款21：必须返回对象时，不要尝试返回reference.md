@@ -106,7 +106,7 @@ if ((a * b) == (c * d)) {
 }
 ```
 
-**此时，表达式`((a * b) == (c * d))`等价于`operator==(operator*(a, b), operator*(c, d))`，而由于static对象值是同一个，左右两式永远相等**
+**此时，表达式`((a * b) == (c * d))`等价于`operator==(operator*(a, b), operator*(c, d))`，而由于`static`对象值是同一个，左右两式永远相等**
 
 ### 3. 奇特的想法（创建$array/vector$）
 
@@ -128,7 +128,7 @@ inline const Rational operator * (const Rational& lhs, const Rational& rhs)
 ### 2. 不调用操作符重载，函数传参（此方法来自笔者自己的想法）
 
 ```C++
-const Rational* (const Rational& lhs, const Rational& rhs
+const Rational& Product(const Rational& lhs, const Rational& rhs
                  Rational& result)
 {
 	result.n = lhs.n * rhs.n;

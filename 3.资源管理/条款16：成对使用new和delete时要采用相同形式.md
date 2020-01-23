@@ -14,11 +14,11 @@ delete stringArray;
 
 
 
-### 2. new和delete的作用
+### 2. `new`和`delete`的作用
 
 #### (1) `new`
 
-##### a. 通过operator new分配内存
+##### a. 通过$operator\ new$分配内存
 
 ##### b. 针对此内存调用构造函数
 
@@ -26,7 +26,7 @@ delete stringArray;
 
 ##### a. 针对内存调用析构函数
 
-##### b. 通过operator delete释放内存
+##### b. 通过$operator\ delete$释放内存
 
 ##### c. 单一对象和对象数组之间的差别（方便`delete`判断需要调用多少次析构函数）
 
@@ -69,4 +69,4 @@ delete pal;			//行为未有定义
 delet [ ] pal;		//正确
 ```
 
-**为避免错误的`new`和`delete`使用，尽量不要对数组形式做`typedef`，可以使用`string`，`vector`等templates**
+**为避免错误的`new`和`delete`使用，尽量不要对数组形式做`typedef`，可以使用`string`，`vector`等`templates​`**

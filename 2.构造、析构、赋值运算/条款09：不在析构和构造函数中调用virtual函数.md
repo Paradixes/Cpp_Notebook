@@ -1,8 +1,8 @@
-## 条款09：不在析构和构造函数中调用virtual函数
+## 条款09：不在析构和构造函数中调用$virtual$函数
 
 ### 一、 可能出现的非法调用
 
-base class:
+$base\ class$:
 
 ```C++
 class Transaction {								//所有交易的base class
@@ -18,7 +18,7 @@ Transaction::Transaction()						//构造函数的实现
 }
 ```
 
-derived class:
+$derived\ class$:
 
 ```C++
 class BuyTransaction: public Transaction {
@@ -33,7 +33,7 @@ public:
 }
 ```
 
-**当调用derived class时会先调用base class的构造函数，而此时virtual函数不会下降到derived层级**
+**当调用$derived\ class$时会先调用$base\ class$的构造函数，而此时$virtual$函数不会下降到$derived$层级**
 
 
 
@@ -55,13 +55,13 @@ private:
 };
 ```
 
-**此方法仍不能避免构造函数调用virtual函数**
+**此方法仍不能避免构造函数调用$virtual$函数**
 
 
 
-### 三、 通过derived class将必要信息传给base class
+### 三、 通过$derived\ class$将必要信息传给$base\ class$
 
-base class:
+$base\ class $:
 
 ```C++
 class Transaction {
@@ -77,7 +77,7 @@ Transaction::Transaction(const std::string& logInfo)
 }
 ```
 
-derived class:
+$derived\ class$:
 
 ```C++
 class BuyTransaction: public Transaction{
