@@ -43,7 +43,7 @@ public:
 	Widget& operator+=(const Widget& rhs);	//该协议适用于
     {										//+=, -=, *=等等
         ...
-        return* this;
+        return *this;
     }
     Widget& operator=(int rhs)				//此函数也适用
     {										//即使参数类型不符协定
