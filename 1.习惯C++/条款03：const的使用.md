@@ -69,7 +69,7 @@ ctb[0] = 'x';							//无法改写const TextBlock
 
 #### (2) 两种`const`概念
 
-#####  a. bitwise `const`
+#####  a. $bitwise\ const$
 
 **定义：不改变对象内任何一个bit**
 
@@ -84,7 +84,7 @@ private:
 }
 ```
 
-**出现的矛盾（此时为logical `const`）**
+**出现的矛盾（此时为$logical\  const$）**
 
 ```C++
 const CTextBlock cctb("Hello");			//声明常量对象
@@ -94,11 +94,11 @@ char* pc = &cctb[0];					//调用const operator[]取得指针
 
 ---
 
-##### b. logical `const`
+##### b. $logical\ const$
 
-**定义：可以改变内部一些bits，但只有在客户端检测不出的情况下可以允许**
+**定义：可以改变内部一些$bits$，但只有在客户端检测不出的情况下可以允许**
 
-**出现的矛盾（此时为bitwise `const`）**
+**出现的矛盾（此时为$bitwise\ const$）**
 
 ```C++
 class CTextBlock{
@@ -130,7 +130,7 @@ mutable bool lengthIsValid;				//始终可以被修改
 
 
 
-#### (3) `const`和`non-const`的转化（转型casting）
+#### (3) `const`和`non-const`的转化（转型$casting$）
 
 ```c++
 class TextBlock{
