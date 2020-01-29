@@ -59,3 +59,5 @@
 ### [条款22：将成员变量声明为private](4.设计与声明/条款22：将成员变量声明为private.md)
 
 ### [条款23：宁以non-member、non-friend替换member函数](4.设计与声明/条款23：宁以non-member、non-friend替换member函数.md)
+
+### [条款24：若所有参数都需要类型转换，则采用non-member函数](4.设计与声明/条款24：若所有参数都需要类型转换，则采用non-member函数.md)
