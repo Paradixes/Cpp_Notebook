@@ -61,3 +61,5 @@
 ### [条款23：宁以non-member、non-friend替换member函数](4.设计与声明/条款23：宁以non-member、non-friend替换member函数.md)
 
 ### [条款24：若所有参数都需要类型转换，则采用non-member函数](4.设计与声明/条款24：若所有参数都需要类型转换，则采用non-member函数.md)
+
+### [条款25：写出不抛出异常的swap函数](4.设计与声明/条款25：写出不抛出异常的swap函数.md)
