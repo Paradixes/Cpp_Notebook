@@ -17,6 +17,7 @@ private:
 ```
 
 
+
 ### 2. $member$函数实现
 
 ```C++
@@ -30,7 +31,7 @@ public:
 
 
 
-### 3. member函数调用
+### 3. $member$函数调用
 
 ```C++
 Rational oneEighth(1, 8);
@@ -38,6 +39,7 @@ Rational oneHalf(1, 2);
 Rational result = oneHalf * oneEighth;		//很好
 result = result * oneEighth;				//很好
 ```
+
 
 
 ### 4. 可能产生的问题（混合式运算）
@@ -53,20 +55,22 @@ result = 2.operator*(oneHalf);	//错误
 ```
 
 
-**在第一个表达式中，编译器会尝试用2构造Rational class**
+
+**在第一个表达式中，编译器会尝试用2构造$Rational\ class$**
 
 ```C++
 const Rational temp(2);			//根据2建立暂时性的Rational对象
 result = oneHalf * temp;
 ```
-**在第二个表达式中，当编译器找不到2对应的class时，会尝试调用non-member operator***
+**在第二个表达式中，当编译器找不到2对应的class时，会尝试调用$non-member\ operator*$**
 
 ```C++
 result = operator*(2, oneHalf);
 ```
 
 
-### 二、 explicit构造函数的member函数
+
+### 二、 $explicit$构造函数的$member$函数
 
 #### 可能产生的问题（混合式运算）
 ```C++
@@ -77,7 +81,7 @@ result = 2 * oneHalf;		//同样错误
 
 
 
-### 三、 non-member函数
+### 三、 $non-member$函数
 
 ### 1. 函数实现
 ```C++
@@ -105,7 +109,8 @@ result = 2 * oneFourth;	//没问题
 ```
 
 
-### 3. operator*不应该成为friend函数
+
+### 3. $operator*$不应该成为$friend$函数
 
 #### (1) 通过public接口完全可以完成任务
 #### (2) 能避免friend函数，尽可能避免friend函数
