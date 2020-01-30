@@ -1,4 +1,4 @@
-## 条款09：不在析构和构造函数中调用$virtual$函数
+## 条款09：不在析构和构造函数中调用 $virtual$ 函数
 
 ### 一、 可能出现的非法调用
 
@@ -33,7 +33,7 @@ public:
 }
 ```
 
-**当调用$derived\ class$时会先调用$base\ class$的构造函数，而此时$virtual$函数不会下降到$derived$层级**
+**当调用 $derived\ class$ 时会先调用 $base\ class$ 的构造函数，而此时 $virtual$ 函数不会下降到 $derived$ 层级**
 
 
 
@@ -55,11 +55,11 @@ private:
 };
 ```
 
-**此方法仍不能避免构造函数调用$virtual$函数**
+**此方法仍不能避免构造函数调用 $virtual$ 函数**
 
 
 
-### 三、 通过$derived\ class$将必要信息传给$base\ class$
+### 三、 通过 $derived\ class$ 将必要信息传给 $base\ class$
 
 $base\ class $:
 
