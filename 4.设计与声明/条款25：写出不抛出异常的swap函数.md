@@ -2,7 +2,7 @@
 
 ### 一、 简单的`swap`函数（缺省）
 
-### 1. 使用$copying$
+### 1. 使用 $copying$
 
 ```C++
 namespace std {
@@ -16,7 +16,10 @@ namespace std {
 }
 ```
 
+
+
 ### 2. 不足之处
+
 #### (1) 涉及三个对象的复制，效率较低
 #### (2) 可能会抛出异常
 
@@ -24,7 +27,7 @@ namespace std {
 
 ### 二、通过指针置换实现`swap`函数
 
-### 1. $pimpl$ ($pointer\ to\ implementation$)手法
+### 1. $pimpl$ ( $pointer\ to\ implementation$ )手法
 
 **以指针指向一个对象，内含真正的数据**
 
@@ -39,7 +42,7 @@ private:
 };
 ```
 
-**主$class$：**
+**主 $class$：**
 
 ```C++
 class Widget {								//该class使用pimpl手法
@@ -74,7 +77,7 @@ namespace std {
 
 **`template<>`表示它是`std::swap`的一个全特化版本**
 
-**除了为标准$templates$（如`swap`）制造特化版本，`std`命名空间的任何东西不可被改变**
+**除了为标准 $templates$（如`swap`）制造特化版本，`std`命名空间的任何东西不可被改变**
 
 **此函数由于没有访问`private`的权限，因而无法通过编译**
 
@@ -104,13 +107,13 @@ namespace std {
 }
 ```
 
-**此做法可通过编译并与$STL$容器有兼容性，既提供`public swap`也有`std::swap`的特化**
+**此做法可通过编译并与 $STL$ 容器有兼容性，既提供`public swap`也有`std::swap`的特化**
 
-**然而其不适用于$class\ templates$**
+**然而其不适用于 $class\ templates$**
 
 
 
-### 三、 适用于$class\ templates$的指针置换`swap`函数
+### 三、 适用于 $class\ templates$ 的指针置换`swap`函数
 
 ### 1. $class\ templates$
 
@@ -135,7 +138,7 @@ namespace std {
 }
 ```
 
-**此时我们尝试偏特化一个$function\ template$ (`std::swap`)，而$C++$中只能偏特化$class\ templates$**
+**此时我们尝试偏特化一个 $function\ template$ (`std::swap`)，而 $C++$ 中只能偏特化 $class\ templates$**
 
 
 
@@ -150,7 +153,7 @@ namespace std {
 }
 ```
 
-**虽然可以编译通过，但在`std`的命名空间添加新的$templates$可能引发未知风险**
+**虽然可以编译通过，但在`std`的命名空间添加新的 $templates$ 可能引发未知风险**
 
 
 
@@ -171,13 +174,11 @@ namespace WidgetStuff {
 }
 ```
 
-**$C++$的名称查找法则会找到`WidgetStuff`内的`Widget`专属版本**
+**$C++$ 的名称查找法则会找到`WidgetStuff`内的`Widget`专属版本**
 
-**也可以不额外使用命名空间，但是这样的话$global$命名空间会变得极其混乱**
+**也可以不额外使用命名空间，但是这样的话 $global$ 命名空间会变得极其混乱**
 
-**此方案适用于$classes$和$class\ templates$，但仍需要特化`std::swap`**
-
-
+**此方案适用于 $classes$ 和 $class\ templates$，但仍需要特化`std::swap`**
 
 
 
@@ -204,7 +205,7 @@ std::swap(obj1, obj2);		//错误的swap调用方式
 
 **此修饰符强迫编译器只认`std`内的`swap`，因而不再可能调用一个`std`命名空间外的`swap`**
 
-**所以$classes$需要对`std::swap`进行全特化**
+**所以 $classes$ 需要对`std::swap`进行全特化**
 
 
 
@@ -212,22 +213,22 @@ std::swap(obj1, obj2);		//错误的swap调用方式
 
 ### 1. 步骤
 
-**判断缺省`swap`是否对调用$class$提供可接受的效率，如果是，则不需要做任何事，直接调用`swap`，如果不是，继续下面步骤**
+**判断缺省`swap`是否对调用 $class$ 提供可接受的效率，如果是，则不需要做任何事，直接调用`swap`，如果不是，继续下面步骤**
 
 **(1) 提供`public swap`成员函数，让它高校置换类型的对象值，且绝不能抛出异常**
 
-**(2) 在$class$或$template$所在命名空间内提供一个$non$-$member\ swap$，调用上述`swap`成员函数**
+**(2) 在 $class$ 或 $template$ 所在命名空间内提供一个 $non$-$member\ swap$，调用上述`swap`成员函数**
 
-**(3) 如果你编写的是$class$，为你的$class$转化`std::swap`，并令其调用`swap`成员函数**
+**(3) 如果你编写的是 $class$，为你的 $class$ 转化`std::swap`，并令其调用`swap`成员函数**
 
-**最后，如果调用`swap`，确保包含一个`using`声明式，然后不加任何$namspace$修饰符，直接调用`swap`**
+**最后，如果调用`swap`，确保包含一个`using`声明式，然后不加任何 $namspace$ 修饰符，直接调用`swap`**
 
 
 
 ### 2. 需要注意的地方
 
-**`swap`成员函数绝不可以抛出异常，因为它的一个应用是帮助$classes$（和$class\ templates$）提供强烈的异常安全性保障（见条款29）**
+**`swap`成员函数绝不可以抛出异常，因为它的一个应用是帮助 $classes$（和 $class\ templates$ ）提供强烈的异常安全性保障（见条款29）**
 
-**缺省版`swap`是以$copy$构造函数和$copy\ assignment$操作符为基础，而两者都允许抛出异常，因而自定版`swap`最主要保障不抛出异常**
+**缺省版`swap`是以 $copy$ 构造函数和 $copy\ assignment$ 操作符为基础，而两者都允许抛出异常，因而自定版`swap`最主要保障不抛出异常**
 
 

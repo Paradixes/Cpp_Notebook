@@ -1,8 +1,8 @@
-## 条款24：若所有参数都需要类型转换，则采用$non-member$函数
+## 条款24：若所有参数都需要类型转换，则采用 $non$-$member$ 函数
 
-### 一、 $non-explicit$构造函数的$member$函数
+### 一、 $non$-$explicit$ 构造函数的 $member$ 函数
 
-### 1. 表现有理数的$class$
+### 1. 表现有理数的 $class$
 
 ```C++
 class Rational {
@@ -18,7 +18,7 @@ private:
 
 
 
-### 2. $member$函数实现
+### 2. $member$ 函数实现
 
 ```C++
 class Rational {
@@ -31,7 +31,7 @@ public:
 
 
 
-### 3. $member$函数调用
+### 3. $member$ 函数调用
 
 ```C++
 Rational oneEighth(1, 8);
@@ -56,13 +56,13 @@ result = 2.operator*(oneHalf);	//错误
 
 
 
-**在第一个表达式中，编译器会尝试用2构造$Rational\ class$**
+**在第一个表达式中，编译器会尝试用2构造 $Rational\ class$**
 
 ```C++
 const Rational temp(2);			//根据2建立暂时性的Rational对象
 result = oneHalf * temp;
 ```
-**在第二个表达式中，当编译器找不到2对应的class时，会尝试调用$non-member\ operator*$**
+**在第二个表达式中，当编译器找不到2对应的 $class$ 时，会尝试调用$non$-$member\ operator*$**
 
 ```C++
 result = operator*(2, oneHalf);
@@ -70,7 +70,7 @@ result = operator*(2, oneHalf);
 
 
 
-### 二、 $explicit$构造函数的$member$函数
+### 二、 $explicit$ 构造函数的 $member$ 函数
 
 #### 可能产生的问题（混合式运算）
 ```C++
@@ -81,7 +81,7 @@ result = 2 * oneHalf;		//同样错误
 
 
 
-### 三、 $non-member$函数
+### 三、 $non$-$member$ 函数
 
 ### 1. 函数实现
 ```C++
@@ -110,7 +110,8 @@ result = 2 * oneFourth;	//没问题
 
 
 
-### 3. $operator*$不应该成为$friend$函数
+### 3. $operator*$ 不应该成为 $friend$ 函数
 
-#### (1) 通过public接口完全可以完成任务
-#### (2) 能避免friend函数，尽可能避免friend函数
+#### (1) 通过 $public$ 接口完全可以完成任务
+
+#### (2) 能避免 $friend$ 函数，尽可能避免 $friend$ 函数
