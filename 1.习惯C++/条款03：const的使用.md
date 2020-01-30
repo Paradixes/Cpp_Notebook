@@ -92,7 +92,7 @@ char* pc = &cctb[0];					//调用const operator[]取得指针
 *pc = 'J';								//对指针内部数据进行操作
 ```
 
----
+
 
 ##### b. $logical\ const$
 
@@ -130,7 +130,7 @@ mutable bool lengthIsValid;				//始终可以被修改
 
 
 
-#### (3) `const`和`non-const`的转化（转型$casting$）
+#### (3) `const`和`non-const`的转化（转型 $casting$ ）
 
 ```c++
 class TextBlock{

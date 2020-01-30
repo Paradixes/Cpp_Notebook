@@ -1,6 +1,6 @@
-## 条款07：为多态基类声明$virtual$析构函数
+## 条款07：为多态基类声明 $virtual$ 析构函数
 
-### 一、 $non-virtual$析构函数可能的问题
+### 一、 $non-virtual$ 析构函数可能的问题
 
 ### 1. 出现的问题
 
@@ -25,7 +25,7 @@ TimeKeeper* ptk = getTimeKeeper();			//从TimeKeeper继承体系
 delete ptk;									//释放它，避免资源泄露
 ```
 
-**PS: $string$、$STL$容器等标准库中的$class$一般都不带有$virtual$析构函数**
+**PS: $string$ 、$STL$ 容器等标准库中的 $class$ 一般都不带有 $virtual$ 析构函数**
 
 
 
@@ -37,19 +37,17 @@ virtual ~TimeKeeper();
 
 
 
-### 二、 随意使用$virtual$析构函数的问题
+### 二、 随意使用 $virtual$ 析构函数的问题
 
-**为了实现virtual函数，对象必须携带一些信息，用来决定运行期间决定哪个virtual函数需要调用，**
-
-**而这会大大增加对象体积**
+**为了实现 $virtual$ 函数，对象必须携带一些信息，用来决定运行期间决定哪个 $virtual$ 函数需要调用，而这会大大增加对象体积**
 
 
 
-### 三、$pure\ virtual$析构函数的使用
+### 三、$pure\ virtual$ 析构函数的使用
 
 ### 1. 目的
 
-**将实体$class$（不带有$pure\ virtual$的$class$）抽象化**
+**将实体 $class$（不带有 $pure\ virtual$ 的 $class$ ）抽象化**
 
 
 
@@ -62,7 +60,7 @@ public:
 };
 ```
 
-**PS: $pure\ virtual$析构函数需要一份定义，用来响应每个基类中析构函数的调用**
+**PS: $pure\ virtual$ 析构函数需要一份定义，用来响应每个基类中析构函数的调用**
 
 ```C++
 AWOV::~AWOV() { }				//定义
@@ -74,4 +72,4 @@ AWOV::~AWOV() { }				//定义
 
 #### 1. 多态用途
 
-#### 2. 通过$base\ classes$接口处理$derived\ class$对象（例：`TimeKeeper`）
+#### 2. 通过 $base\ classes$ 接口处理 $derived\ class$ 对象（例：`TimeKeeper`）
