@@ -18,7 +18,7 @@ delete stringArray;
 
 #### (1) `new`
 
-##### a. 通过$operator\ new$分配内存
+##### a. 通过 $operator\ new$ 分配内存
 
 ##### b. 针对此内存调用构造函数
 
@@ -26,7 +26,7 @@ delete stringArray;
 
 ##### a. 针对内存调用析构函数
 
-##### b. 通过$operator\ delete$释放内存
+##### b. 通过 $operator\ delete$ 释放内存
 
 ##### c. 单一对象和对象数组之间的差别（方便`delete`判断需要调用多少次析构函数）
 
