@@ -145,7 +145,7 @@ class TextBlock{
     char& operator[](std::size_t position)				//调用const op[]，得到non-const
     {
         return 
-            const_char<char&>(							//将op[]返回的const转除
+            const_cast<char&>(							//将op[]返回的const转除
         		static_cast<const TextBlock&>(*this)	//为*this加上const(避免调用自己)
             		[position]							//调用const op[]
         );
