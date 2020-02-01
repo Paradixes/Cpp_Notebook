@@ -31,7 +31,7 @@ private:
 Mutex m;			//定义你所需要的互斥器
 ...
 {					//建立区块定义critical section
-Lock m1(&m);		//锁定互斥器
+	Lock m1(&m);	//锁定互斥器
 	...				//执行critical section操作
 }					//自动解除互斥器锁定
 ```
